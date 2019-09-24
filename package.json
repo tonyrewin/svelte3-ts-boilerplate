@@ -12,7 +12,7 @@
   "license": "MIT",
   "author": "Tony Rewin",
   "scripts": {
-    "cleanup": "rimraf ./public/bundle.* ./src/**/*.js ./src/**/*.js.map",
+    "cleanup": "rimraf ./public/bundle.* ./src/**/*.{js,js.map} ./src/*.{js,js.map}",
     "autobuild": "cross-env NODE_ENV=development rollup -c -w",
     "test": "cross-env NODE_ENV=test jest",
     "start": "npm run cleanup && npm run autobuild",
@@ -24,13 +24,14 @@
     "format:prettier": "prettier --write '**/*.{js,ts,svelte,json,md,css,pcss}'",
     "lint": "npm-run-all -c lint:*",
     "format:types": "tsc",
-    "lint:eslint": "eslint '**/*.{js,ts,svelte}'",
-    "lint:prettier": "prettier --check '**/*.{js,ts,svelte,json,md,css,pcss}'",
+    "lint:eslint": "eslint 'src/**/*.{js,ts,svelte}' 'src/*.{js,ts,svelte}'",
+    "lint:prettier": "prettier --check 'src/**/*.{js,ts,svelte,json,md,css,pcss}' 'src/*.{js,ts,svelte,json,md,css,pcss}'",
     "lint:types": "tsc"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
+    "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.4.5",
+    "@babel/preset-typescript": "7.3.3",
     "@fullhuman/postcss-purgecss": "^1.3.0",
     "@pyoner/svelte-ts-preprocess": "^1.2.0",
     "@pyoner/svelte-types": "^3.4.4-2",
@@ -43,11 +44,14 @@
     "cssnano": "^4.1.10",
     "deasync": "^0.1.15",
     "eslint": "^6.4.0",
+    "eslint-config-prettier": "6.0.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^22.17.0",
+    "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-svelte3": "Conduitry/eslint-plugin-svelte3#preprocess",
-    "jest": "^24.8.0",
+    "eslint-plugin-svelte3": "^2.7.3",
+    "eslint-plugin-vue": "^5.2.3",
+    "jest": "^24.9.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^7.0.18",
     "postcss-import": "^12.0.1",
@@ -56,26 +60,27 @@
     "prettier": "^1.18.2",
     "prettier-eslint": "9.0.0",
     "prettier-plugin-svelte": "0.7.0",
-    "rimraf": "^2.6.3",
-    "rollup": "^1.16.1",
+    "rimraf": "^3.0.0",
+    "rollup": "^1.21.4",
     "rollup-plugin-commonjs": "^10.0.0",
-    "rollup-plugin-livereload": "^1.0.1",
-    "rollup-plugin-node-resolve": "^5.0.4",
+    "rollup-plugin-livereload": "^1.0.3",
+    "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-serve": "^1.0.1",
     "rollup-plugin-svelte": "^5.1.0",
     "rollup-plugin-terser": "^5.0.0",
-    "rollup-plugin-typescript2": "0.22.1",
+    "rollup-plugin-typescript2": "0.24.2",
     "svelte": "^3.5.3",
     "svelte-preprocess": "^3.1.1",
     "ts-jest": "^24.0.2",
-    "typescript": "^3.5.2"
+    "tslib": "^1.10.0",
+    "typescript": "^3.5.2",
+    "vue-eslint-parser": "^6.0.4"
   },
   "babel": {
     "presets": [
-      "@babel/preset-env"
+      "@babel/preset-env",
+      "@babel/preset-typescript"
     ]
   },
-  "dependencies": {
-    "tslib": "^1.10.0"
-  }
+  "dependencies": {}
 }

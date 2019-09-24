@@ -1,7 +1,9 @@
 module.exports = {
-  parser: '@typescript-eslint/parser',
+  parser: 'vue-eslint-parser',
   parserOptions: {
+    parser: '@typescript-eslint/parser',
     project: './tsconfig.json',
+    extraFileExtensions: ['.svelte'],
     ecmaVersion: 2019,
     sourceType: 'module',
   },
@@ -9,22 +11,20 @@ module.exports = {
     es6: true,
     browser: true,
     jest: true,
-    node: true,
+
   },
   extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:vue/essential',
+    'plugin:prettier/recommended',
+    'prettier/@typescript-eslint',
     'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    'plugin:import/warnings',
-    //"prettier",
-    //"prettier/@typescript-eslint",
-    'plugin:jest/all',
+    'plugin:jest/all'
   ],
   plugins: [
-    //'prettier',
+    '@typescript-eslint', 
+    'prettier', 
     'svelte3',
-    '@typescript-eslint',
+    'jest'
   ],
   overrides: [
     {
