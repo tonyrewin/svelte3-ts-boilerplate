@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { writable } from 'svelte/store'
+  import { writable, Writable } from 'svelte/store'
   import Counter from './components/Counter.svelte'
 
-  const count = writable(100)
+  const count: Writable<number> = writable(100)
   export let name: string
 </script>
 

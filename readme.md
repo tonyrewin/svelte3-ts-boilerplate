@@ -1,6 +1,6 @@
 # Svelte3-Typescript Boilerplate
 
-TS analytics works in VSCode!
+TS analytics works in VSCode! Based on 
 
 ## Description
 
@@ -16,7 +16,4 @@ Starter pack for Svelte 3/Rollup/Typescript/Visual Studio Code:
 
 ## How to start
 
-```sh
-git clone https://github.com/geakstr/svelte-3-rollup-typescript-vscode.git
-cd svelte-3-rollup-typescript-vscode && rm -rf .git && npm install
-```
+I've started my path from [geakstr/svelte-3-rollup-typescript-vscode](https://github.com/geakstr/svelte-3-rollup-typescript-vscode) and found out the importance of `svelte.config.js` in the root directory.

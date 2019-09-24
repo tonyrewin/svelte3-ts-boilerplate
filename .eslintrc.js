@@ -2,7 +2,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: './tsconfig.json',
-    extraFileExtensions: ['.svelte'],
+    extraFileExtensions: ['.svelte', '.ts'],
     ecmaVersion: 2020,
     sourceType: 'module'
   },
