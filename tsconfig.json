@@ -4,15 +4,11 @@
     "module": "esnext",
     "moduleResolution": "node",
     "isolatedModules": true,
-    "lib": [
-      "dom",
-      "esnext",
-      "es6"
-    ],
+    "lib": ["dom", "esnext", "es6"],
     "sourceMap": true,
     "rootDir": "./src",
     "baseUrl": "./src",
-    "outDir": "./public",
+    "outDir": "./src",
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -32,18 +28,11 @@
     "typeRoots": [
       "./node_modules/@types",
       "./node_modules/@pyoner/svelte-types",
-      "./node_modules/@types/jest"
+      "./node_modules/@types/jest",
+      "./src/types"
     ],
-    "types": [
-      "@pyoner/svelte-types",
-      "@types/jest"
-    ]
+    "types": ["@pyoner/svelte-types", "@types/jest"]
   },
-  "exclude": [
-    "node_modules/*"
-  ],
-  "include": [
-    "src/**/*.ts",
-    "src/test/*.test.ts"
-  ]
+  "exclude": ["node_modules/*"],
+  "include": ["src/**/*.ts", "src/test/*.test.ts"]
 }

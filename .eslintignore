@@ -1,0 +1,5 @@
+src/**/*.svelte
+node_modules
+public/bundle.*
+*.js
+*.json

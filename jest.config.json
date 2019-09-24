@@ -1,31 +1,28 @@
 {
-    "collectCoverageFrom": [
-      "./src/**/*.{js,jsx,ts,tsx}",
-      "!**/*.d.ts"
-    ],
-    "testMatch": [
-      "<rootDir>/src/test/**/*.(j|t)s?(x)",
-      "<rootDir>/src/**/?(*.)(spec|test).(j|t)s?(x)"
-    ],
-    "testEnvironment": "jsdom",
-    "transform": {
-      "^.+\\.tsx?$": "ts-jest",
-      "^.+\\.js$": "babel-jest",
-      "^.+\\.svelte$": "./svelte-jest.js"
-    },
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node",
-      "mjs",
-      "svelte"
-    ],
-    "globals": {
-      "ts-jest": {
-        "tsConfig": "tsconfig.test.json"
-      }
+  "collectCoverageFrom": ["./src/**/*.{js,jsx,ts,tsx}", "!**/*.d.ts"],
+  "testMatch": [
+    "<rootDir>/src/test/**/*.(j|t)s?(x)",
+    "<rootDir>/src/**/?(*.)(spec|test).(j|t)s?(x)"
+  ],
+  "testEnvironment": "jsdom",
+  "transform": {
+    "^.+\\.tsx?$": "ts-jest",
+    "^.+\\.js$": "babel-jest",
+    "^.+\\.svelte$": "./svelte-jest.js"
+  },
+  "moduleFileExtensions": [
+    "ts",
+    "tsx",
+    "js",
+    "jsx",
+    "json",
+    "node",
+    "mjs",
+    "svelte"
+  ],
+  "globals": {
+    "ts-jest": {
+      "tsConfig": "tsconfig.test.json"
     }
   }
+}

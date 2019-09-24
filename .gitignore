@@ -7,5 +7,7 @@ yarn-error.log*
 .env
 .vscode
 node_modules
-public/bundle*
+public/bundle.*
+src/**/*.js
+src/**/*.js.map
 yarn.lock

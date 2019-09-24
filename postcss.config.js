@@ -7,28 +7,28 @@ const purgecss = require('@fullhuman/postcss-purgecss')
 const dev = process.env.ROLLUP_WATCH
 
 let plugins = [
-    postcss_import(),
-    postcss_url(),
-    //require('bulma'),
-    //require('tailwindcss'),
-    postcss_preset_env({
-       stage: 0,
-       autoprefixer: {
-          grid: true,
-       },
-    }),
-    cssnano({
-       autoprefixer: false,
-       preset: ['default'],
-    })
- ]
+  postcss_import(),
+  postcss_url(),
+  //require('bulma'),
+  //require('tailwindcss'),
+  postcss_preset_env({
+    stage: 0,
+    autoprefixer: {
+      grid: true,
+    },
+  }),
+  cssnano({
+    autoprefixer: false,
+    preset: ['default'],
+  }),
+]
 
-if(!dev) plugins.push(
+if (!dev)
+  plugins.push(
     purgecss({
-        content: ['./**/*.html', './**/*.svelte'],
-        defaultExtractor: content =>
-        content.match(/[A-Za-z0-9-_:/]+/g) || [],
-    })
- )
+      content: ['./**/*.html', './**/*.svelte'],
+      defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || [],
+    }),
+  )
 
 module.exports = { plugins }
